@@ -15,3 +15,8 @@ perf script > out.perf
 FlameGraph/stackcollapse-perf.pl out.perf > out.folded
 FlameGraph/flamegraph.pl out.folded > sleep.svg
 ```
+
+# Sum the size of some files
+```bash
+find /directory/ -name some-filter* -exec du {} \; | awk '{s+=$1} END {print s/1024}'
+```
